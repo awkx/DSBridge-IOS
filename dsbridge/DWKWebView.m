@@ -54,7 +54,7 @@
     // add internal Javascript Object
     InternalApis *  interalApis= [[InternalApis alloc] init];
     interalApis.webview=self;
-    [self addJavascriptObject:interalApis namespace:@"_dsb"];
+    [self addJavascriptObject:interalApis space:@"_dsb"];
     return self;
 }
 
@@ -378,12 +378,12 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completi
            completionHandler:nil];
 }
 
-- (void) addJavascriptObject:(id)object namespace:(NSString *)namespace{
-    if(namespace==nil){
-        namespace=@"";
+- (void) addJavascriptObject:(id)object space:(NSString *)space{
+    if(space==nil){
+        space=@"";
     }
     if(object!=NULL){
-        [javaScriptNamespaceInterfaces setObject:object forKey:namespace];
+        [javaScriptNamespaceInterfaces setObject:object forKey:space];
     }
 }
 
