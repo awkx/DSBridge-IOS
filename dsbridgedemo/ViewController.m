@@ -21,13 +21,13 @@
     [self.view addSubview:dwebview];
     
     // register api object without namespace
-    [dwebview addJavascriptObject:[[JsApiTest alloc] init] space:nil];
+    [dwebview addJavascriptObject:[[JsApiTest alloc] init] namespace:nil];
     
     // register api object without namespace
-    [dwebview addJavascriptObject:[[ JsApiTestSwift alloc] init] space:@"swift"];
+    [dwebview addJavascriptObject:[[ JsApiTestSwift alloc] init] namespace:@"swift"];
     
     // register api object with namespace "echo"
-    [dwebview addJavascriptObject:[[JsEchoApi alloc] init] space:@"echo"];
+    [dwebview addJavascriptObject:[[JsEchoApi alloc] init] namespace:@"echo"];
     
     // open debug mode, Release mode should disable this.
     [dwebview setDebugMode:true];

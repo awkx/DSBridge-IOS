@@ -31,7 +31,7 @@ typedef void (^JSCallback)(NSString * _Nullable result,BOOL complete);
  * @param namespace  
  * if empty, the object have no namespace.
  **/
-- (void)addJavascriptObject:(id _Nullable ) object space:(NSString *  _Nullable) space;
+- (void)addJavascriptObject:(id _Nullable ) object namespace:(NSString *  _Nullable) space;
 
 // Remove the Javascript Object with the supplied namespace
 - (void)removeJavascriptObject:(NSString *  _Nullable) space;

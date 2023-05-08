@@ -54,7 +54,7 @@
     // add internal Javascript Object
     InternalApis *  interalApis= [[InternalApis alloc] init];
     interalApis.webview=self;
-    [self addJavascriptObject:interalApis space:@"_dsb"];
+    [self addJavascriptObject:interalApis namespace:@"_dsb"];
     return self;
 }
 
@@ -378,7 +378,7 @@ initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completi
            completionHandler:nil];
 }
 
-- (void) addJavascriptObject:(id)object space:(NSString *)space{
+- (void) addJavascriptObject:(id)object namespace:(NSString *)space{
     if(space==nil){
         space=@"";
     }
